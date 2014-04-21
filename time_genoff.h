@@ -29,6 +29,10 @@
 #ifndef __TIME_GENOFF_H__
 #define __TIME_GENOFF_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
  * Time genoff base -- To be used by the time setter
  * Reserved bases to be supported later.
@@ -67,6 +71,8 @@ typedef enum time_genoff_opr {
 	T_SET,
 	T_GET,
 	T_IS_SET,
+	T_DISABLE,
+	T_ENABLE,
 	T_MAX
 } time_genoff_opr_type;
 
@@ -85,5 +91,12 @@ typedef struct time_genoff_info {
 
 /* API to be called for time get/set operation */
 int time_genoff_operation(time_genoff_info_type *pargs);
+
+/* API to be called for logging operations */
+int time_control_operations(time_genoff_info_type *pargs);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __TIME_GENOFF_H__ */
