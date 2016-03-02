@@ -1,5 +1,5 @@
 ################################################################################
-# @file vendor/qcom/opensource/time_services/Android.mk
+# @file $(BOARD_QCOM_OPENSOURCE_DIR)/time_services/Android.mk
 # @brief Makefile for installing  time services header on Android.
 ################################################################################
 
