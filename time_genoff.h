@@ -24,6 +24,9 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
+ *
  */
 
 #ifndef __TIME_GENOFF_H__
@@ -93,13 +96,38 @@ typedef struct time_genoff_info {
 	time_genoff_opr_type operation; /* Time operation to be done */
 }time_genoff_info_type;
 
-/* API to be called for time get/set operation */
+/**
+ * @brief Perform a time get/set operation based on the provided arguments.
+ *
+ * This function takes a time_genoff_info_type structure as an argument, which contains
+ * information about the time base, time value, time unit, and operation to be performed.
+ *
+ * @param pargs A pointer to a time_genoff_info_type structure containing the operation details.
+ *
+ * @return An integer indicating the result of the operation.
+ */
 int time_genoff_operation(time_genoff_info_type *pargs);
 
-/* API to be called for logging operations */
+/**
+ * @brief Perform a time control operation based on the provided arguments.
+ *
+ * This function takes a time_genoff_info_type structure as an argument, which contains
+ * information about the time base, time value, time unit, and operation to be performed.
+ *
+ * @param pargs A pointer to a time_genoff_info_type structure containing the operation details.
+ *
+ * @return An integer indicating the result of the operation.
+ */
 int time_control_operations(time_genoff_info_type *pargs);
 
-/* API to be called for getting qtimer based timestamp */
+/**
+ * @brief Retrieves the timestamp based on Qtimer time tick.
+ *
+ * This function returns the timestamp value in 48-bit format, which can be used
+ * for various purposes such as timestamping logging based on uptime value.
+ *
+ * @return The timestamp value in 48-bit format.
+ */
 unsigned long long time_get_from_timetick();
 
 #ifdef __cplusplus
